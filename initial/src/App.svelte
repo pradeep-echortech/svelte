@@ -1,4 +1,5 @@
 <script>
+    import New from "./components/new.svelte";
 	// export let name;
 	// let bold = "<b>PRADEEP</b>"
 	// const status = 'danger'
@@ -15,6 +16,7 @@
 	// 	count +=  stepsize
 	// }
 
+	import Greet from './components/new.svelte'
 
 	let formValues = {
 		name : '',
@@ -23,9 +25,13 @@
 		skillSet : [],
 		gender:[]
 	}
+	function submitForm() {
+		console.log(formValues);
+	}
 </script>
 
 <main>
+	<Greet />
 	<!-- {#if num === 0 }
 	<h1>the number is zero</h1>
 	{:else if num < 0}
@@ -50,7 +56,7 @@
 			{JSON.stringify(formValues,null,2)}
 		</pre>
 	</div>
-	<form action="">
+	<form on:submit|preventDefault={submitForm}>
 		<div>
 			<label for="name">Name:</label>
 			<input type="text" id="name" bind:value = {formValues.name}>
@@ -79,10 +85,13 @@
 		</div>
 		<div>
 			<label for="">Gender:</label>
-			<input type="radio" name="gender" id="male" bind:group={formValues.gender}>
+			<input type="radio"  id="male" value="male" bind:group={formValues.gender}>
 			<label for="male">Male</label>
-			<input type="radio" name="gender" id="female" bind:group={formValues.gender}>
+			<input type="radio"  id="female" value="female" bind:group={formValues.gender}>
 			<label for="female">Female</label>
+		</div>
+		<div>
+			<button>Submit</button>
 		</div>
 	</form>
 </main>
