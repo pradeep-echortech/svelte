@@ -1,11 +1,12 @@
 <script>
-    import New from "./components/new.svelte";
+	import New from "./components/new.svelte";
 	// export let name;
 	// let bold = "<b>PRADEEP</b>"
 	// const status = 'danger'
 	// const isPromoted = true
 	// let count = 0
 	// const num = 5
+
 	// let fullnames = [
 	// 	{first:'meher',last:'pradeep'},
 	// 	{first:'durga',last:'prasad'},
@@ -16,22 +17,68 @@
 	// 	count +=  stepsize
 	// }
 
-	import Greet from './components/new.svelte'
+	import Greet from "./components/new.svelte";
 
-	let formValues = {
-		name : '',
-		profileSummary : '',
-		country : '',
-		skillSet : [],
-		gender:[]
-	}
-	function submitForm() {
-		console.log(formValues);
-	}
+	// let formValues = {
+	// 	name : '',
+	// 	profileSummary : '',
+	// 	country : '',
+	// 	skillSet : [],
+	// 	gender:[]
+	// }
+	// function submitForm() {
+	// 	localStorage.setItem('Details',JSON.stringify( formValues));
+	// }
+
+	import ComponentA from "./components/componentA.svelte";
+	// import {setContext} from 'svelte'
+	// const userName = 'Meher'
+	// setContext('username-context',userName)
+
+	// let showPopup = false
+	// function closePopup(event) {
+	// 	showPopup = false
+	// 	console.log(event.detail);
+	// }
+
+	// function handleGreet(event) {
+	// 	alert(event.detail)
+	// }
+
+	import Card from "./components/Card.svelte";
 </script>
 
 <main>
-	<Greet />
+	<Card>Card Content 1</Card>
+	<Card><h2>Card Content 2</h2></Card>
+	<Card
+		><img
+			src="https://picsum.photos/200" alt=""
+			height="250px"
+		/></Card
+	>
+
+	<Card>
+		<div slot="header">
+			<h3>Header</h3>
+		</div>
+		<div slot="content">
+			<img
+			src="https://picsum.photos/200" alt=""
+			/>
+		</div>
+		<div slot="footer">
+			<button>View Details</button>
+		</div>
+	</Card>
+
+	<!-- <ComponentA on:greet={handleGreet}/> -->
+
+	<!-- <button on:click={()=>(showPopup=true)}>Show Popup</button>
+		{#if showPopup}
+		<ComponentA on:close={closePopup}/>
+		{/if} -->
+
 	<!-- {#if num === 0 }
 	<h1>the number is zero</h1>
 	{:else if num < 0}
@@ -45,18 +92,22 @@
 	<h2 class={status}>status</h2>
 	<h2 class={isPromoted? 'promoted':' '}>Movie Title</h2> -->
 
+	<!-- <h2>App component username- {userName}</h2> -->
+
 	<!-- {#each fullnames as name,index}
 		<h2>{index + 1} {name.first} {name.last}</h2>
 	{/each} -->
 
 	<!-- <button on:click={()=>(count+=1)}>Count {count}</button> -->
 	<!-- <button on:click={()=>handleClick(5)}>Count {count}</button> -->
-	<div>
+
+	<!-- <div>
 		<pre>
-			{JSON.stringify(formValues,null,2)}
+			{JSON.stringify(formValues, null,2)}
 		</pre>
-	</div>
-	<form on:submit|preventDefault={submitForm}>
+	</div> -->
+
+	<!-- <form on:submit|preventDefault={submitForm}>
 		<div>
 			<label for="name">Name:</label>
 			<input type="text" id="name" bind:value = {formValues.name}>
@@ -93,13 +144,13 @@
 		<div>
 			<button>Submit</button>
 		</div>
-	</form>
+	</form> -->
 </main>
 
 <style>
-	input + label {
+	/* input + label {
 		display: inline-flex;
-	}
+	} */
 	/* .status{
 		color: green;
 	}
@@ -110,7 +161,7 @@
 		font-style: italic;
 	} */
 	main {
-		/* text-align: center; */
+		text-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
