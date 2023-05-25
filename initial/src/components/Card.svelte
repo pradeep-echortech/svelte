@@ -1,21 +1,43 @@
+<!-- slots props -->
+<script>
+    let names = [
+        {
+            firstname:'Bruce',
+            lastname: 'wayne',
+        },
+        {
+            firstname:'Meher',
+            lastname: 'Pradeep',
+        },
+        {
+            firstname:'Virat',
+            lastname: 'Kohli',
+        },
+    ]
+</script>
+{#each names as name (name)}
+    <slot name="hero" firstname={name.firstname} lastname={name.lastname} />
+{/each}
+
 <!-- <div class="card"><slot>Default Content</slot></div> -->
-<div class="card">
-    <div class="card-header">
+<!-- <div class="card">
+    <div>
         <slot name="header" />
     </div>
-    <div class="card-content">
-        <slot name="content">Default content</slot>
+    <div>
+        <slot name="content">Default Content</slot>
     </div>
     {#if $$slots.footer}
     <hr>
-    <div class="card-footer">
+    <div>
         <slot name="footer" />
     </div>
     {/if}
-</div>
+</div> -->
+
 
 <style>
-    :global(h3){
+    :global(h3) {
         color: rgb(7, 168, 149);
     }
     .card {

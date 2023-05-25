@@ -19,8 +19,11 @@
 
 <!-- Event Forwarding -->
 
-<script>
+<!-- <script>
     import ComponentB from "./componentB.svelte";
 </script>
 
-<ComponentB on:greet/>
+<ComponentB on:greet/> -->
+
+<!-- dynamic components -->
+<h2>Component 1 Content</h2>

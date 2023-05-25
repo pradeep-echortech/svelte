@@ -46,31 +46,37 @@
 	// }
 
 	import Card from "./components/Card.svelte";
+	import ComponentB from "./components/componentB.svelte";
+	import ComponentC from "./components/componentC.svelte";
+	let activeTab = ComponentA
 </script>
 
 <main>
-	<Card>Card Content 1</Card>
-	<Card><h2>Card Content 2</h2></Card>
-	<Card
-		><img
-			src="https://picsum.photos/200" alt=""
-			height="250px"
-		/></Card
-	>
-
+	<button on:click={()=>(activeTab = ComponentA)}>Tab A</button>
+	<button on:click={()=>(activeTab = ComponentB)}>Tab B</button>
+	<button on:click={()=>(activeTab = ComponentC)}>Tab C</button>
+	<svelte:component this={activeTab} />
+	<!-- <Card>
+		<h3 slot="hero" let:firstname let:lastname>
+			{firstname} {lastname}
+		</h3>
+	</Card>
+	<Card>
+		<h3 slot="hero" let:firstname let:lastname>
+			{lastname} {firstname}
+		</h3>		
+	</Card>
 	<Card>
 		<div slot="header">
 			<h3>Header</h3>
 		</div>
 		<div slot="content">
-			<img
-			src="https://picsum.photos/200" alt=""
-			/>
+			<img src="https://picsum.photos/200" alt="">
 		</div>
 		<div slot="footer">
 			<button>View Details</button>
 		</div>
-	</Card>
+	</Card> -->
 
 	<!-- <ComponentA on:greet={handleGreet}/> -->
 
