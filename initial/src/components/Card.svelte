@@ -15,12 +15,12 @@
         },
     ]
 </script>
-{#each names as name (name)}
+<!-- {#each names as name (name)}
     <slot name="hero" firstname={name.firstname} lastname={name.lastname} />
-{/each}
+{/each} -->
 
 <!-- <div class="card"><slot>Default Content</slot></div> -->
-<!-- <div class="card">
+<div class="card">
     <div>
         <slot name="header" />
     </div>
@@ -33,7 +33,7 @@
         <slot name="footer" />
     </div>
     {/if}
-</div> -->
+</div>
 
 
 <style>

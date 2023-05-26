@@ -48,14 +48,30 @@
 	import Card from "./components/Card.svelte";
 	import ComponentB from "./components/componentB.svelte";
 	import ComponentC from "./components/componentC.svelte";
+	import Router from 'svelte-spa-router'
 	let activeTab = ComponentA
+	let routes = {
+		'/': Greet,
+		'/componenta': ComponentA,
+		'/componentb': ComponentB,
+		'/card': Card,
+		'*': ComponentC,
+	}
 </script>
 
 <main>
-	<button on:click={()=>(activeTab = ComponentA)}>Tab A</button>
+	<nav>
+		<a href="#/">Home</a>
+		<a href="#/componenta">About</a>
+		<a href="#/componentb">Gallery</a>
+		<a href="#/card">Card</a>
+	</nav>
+	<Router {routes}/>
+	<!-- <button on:click={()=>(activeTab = ComponentA)}>Tab A</button>
 	<button on:click={()=>(activeTab = ComponentB)}>Tab B</button>
 	<button on:click={()=>(activeTab = ComponentC)}>Tab C</button>
-	<svelte:component this={activeTab} />
+	<svelte:component this={activeTab} /> -->
+	
 	<!-- <Card>
 		<h3 slot="hero" let:firstname let:lastname>
 			{firstname} {lastname}
