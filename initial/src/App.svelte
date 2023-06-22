@@ -45,28 +45,33 @@
 	// 	alert(event.detail)
 	// }
 
-	import Card from "./components/Card.svelte";
-	import ComponentB from "./components/componentB.svelte";
-	import ComponentC from "./components/componentC.svelte";
-	import Router from 'svelte-spa-router'
-	let activeTab = ComponentA
-	let routes = {
-		'/': Greet,
-		'/componenta': ComponentA,
-		'/componentb': ComponentB,
-		'/card': Card,
-		'*': ComponentC,
-	}
+	// import Card from "./components/Card.svelte";
+	// import ComponentB from "./components/componentB.svelte";
+	// import ComponentC from "./components/componentC.svelte";
+	// import Router from 'svelte-spa-router'
+	// let activeTab = ComponentA
+	// let routes = {
+	// 	'/': Greet,
+	// 	'/componenta': ComponentA,
+	// 	'/componentb': ComponentB,
+	// 	'/card': Card,
+	// 	'*': ComponentC,
+	// }
+
+	
+
 </script>
 
+
+
 <main>
-	<nav>
+	<!-- <nav>
 		<a href="#/">Home</a>
 		<a href="#/componenta">About</a>
 		<a href="#/componentb">Gallery</a>
 		<a href="#/card">Card</a>
-	</nav>
-	<Router {routes}/>
+	</nav> -->
+	<!-- <Router {routes}/>	 -->
 	<!-- <button on:click={()=>(activeTab = ComponentA)}>Tab A</button>
 	<button on:click={()=>(activeTab = ComponentB)}>Tab B</button>
 	<button on:click={()=>(activeTab = ComponentC)}>Tab C</button>
